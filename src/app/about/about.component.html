@@ -1,0 +1,174 @@
+<style>
+    .main-card {
+        width: 1000px; /* Square container */
+        height: 450px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 5px;
+        background: #ffffff;
+        border-radius: 20px;
+        
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(12, 12, 12, 0.2);
+    }
+    .sub-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        border-radius: 5px;
+        font-size: 35px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .icon {
+        font-size: 70px;
+        color: #007bff;
+    }
+
+    .about-section {
+        background-color: #f8f9fa;
+        padding: 50px 0;
+    }
+    .about-img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .about-content {
+        padding-left: 20px;
+    }
+    .about-title {
+        font-weight: bold;
+        color: #007bff;
+    }
+</style>
+
+
+  <!-- background image-->
+
+  <div class="container-fluid ">
+    <img src="img/Green and White Modern Gradient Health Banner (1).png" style="width:100%; height: 80%;">
+   </div>
+   <br><br>
+   
+
+<!--  slogen-->
+   <div class="container-fluid">
+<h2  style="font-size: 40px; text-align: center; background-color: rgb(132, 132, 209); height: 100px; font-weight: bold; font-family: Arial Black;">
+    Compassionate Care, Advanced Healing - Shri Datta Multispeciality Hospital, Medha
+</h2>
+
+   </div>
+   <br>
+<!--  code for card-->
+  <div class="container"style="background-color:bisque;width:7000%;height:300%">
+<div class="container d-flex justify-content-center align-items-center vh-90 ">
+    <div class="container-fluid ">
+        <img src="img/WhatsApp Image 2025-03-07 at 10.12.26.jpeg" style="width:90%; height: 80%; border-radius: 20px;">
+       </div>
+    
+    <div class="main-card">
+        <div class="sub-card">
+            <div class="icon">👨‍⚕️</div>
+            <div>Doctors</div>
+            <div>20+</div>
+        </div>
+        <div class="sub-card">
+            <div class="icon">👩‍⚕️</div>
+            <div>Staff</div>
+            <div>50+</div>
+        </div>
+        <div class="sub-card">
+            <div class="icon">🛏️</div>
+            <div>Beds</div>
+            <div>100+</div>
+        </div>
+        <div class="sub-card">
+            <div class="icon">💊</div>
+            <div>Medical</div>
+            <div>24/7</div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- image and hospital information-->
+<div class="container about-section">
+    <div class="row align-items-center">
+        <!-- Left Side - Image -->
+        <div class="col-md-6">
+            <img src="img/doctor-holding-clipboard-looking-camera.jpg" alt="Shri Datta Multispeciality Hospital" class="about-img">
+        </div>
+        <!-- Right Side - Information -->
+        <div class="col-md-6 about-content">
+            <h2 class="about-title">About Shri Datta Multispeciality Hospital</h2>
+            <p>
+                Shri Datta Multispeciality Hospital, Medha is a leading healthcare institution dedicated to providing 
+                high-quality medical services with advanced technology and compassionate care.
+            </p>
+            <p style="font-size: 30px;"><strong>🏥 Hospital Highlights:</strong></p>
+            <ul style="font-size: 20px;">
+                <li>👨‍⚕️ 20+ Experienced Doctors</li>
+                <li>👩‍⚕️ 50+ Dedicated Staff Members</li>
+                <li>🛏️ 100+ Well-Equipped Beds</li>
+                <li>💊 24/7 Emergency & Medical Services</li>
+                <li> 🛏️ Genral ward</li>
+                <li> 🛏️Special ward</li>
+                <li>👨 Operation Theatre</li>
+                <li>👩‍⚕️ sonography center</li>
+                <li> 💊 medical</li>
+            </ul>
+            <p>We are committed to excellence in patient care, offering world-class facilities and advanced 
+                treatments to serve our community.
+                At Shri Datta Multispeciality Hospital, we take pride in offering a wide range of medical specialties,
+                 including cardiology, orthopedics, neurology, gynecology, pediatrics, general surgery, and more. Our 24/7 emergency care and dedicated ICU units ensure that we are always prepared to handle critical cases with efficiency and expertise. We also provide preventive health checkups, physiotherapy, and rehabilitation services, aiming to improve the overall well-being of our community. Our state-of-the-art pharmacy and diagnostic center allow patients to access high-quality medicines and lab tests under one roof.
+
+                Driven by our mission to deliver compassionate, affordable, and world-class healthcare, 
+
+                 Shri Datta Multispeciality Hospital continues to evolve with the latest advancements in medicine. 
+             We believe in patient-centric care, ensuring that every individual receives attention, respect, and the
+              best possible treatment. Our vision is to become a trusted healthcare leader in Medha and beyond, offering
+               innovative treatments, ethical medical practices, and a commitment to excellence. Whether you need routine medical care,
+              specialized treatment, or emergency support, we are here for you—24/7, every day of the year.
+
+
+            </p>
+        </div>
+    </div>
+</div>
+<!--- code for images sliding-->
+<div class="container mt-4">
+    <div id="hospitalCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/WhatsApp Image 2025-03-07 at 10.12.26.jpeg" class="d-block w-100" alt="Hospital Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/hos1.jpeg" class="d-block w-100" alt="Hospital Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/hos2.jpeg" class="d-block w-100" alt="Hospital Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="img/hos3.jpeg" class="d-block w-100" alt="Hospital Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="img/sle.jpg" class="d-block w-100" alt="Hospital Image 3">
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#hospitalCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hospitalCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+

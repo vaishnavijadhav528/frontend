@@ -1,0 +1,125 @@
+
+
+<br><br><br><br><br><br><br>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+        <h4 class="text-center">Patient Registration</h4>
+
+        <!-- Registration Form -->
+        <form (ngSubmit)="submitdata(form)" #form="ngForm">
+            <!-- Patient Name -->
+            <div class="mb-3">
+              <label class="form-label">Patient Name</label>
+              <input type="text" class="form-control" name="patientname" [(ngModel)]="r.patientname"
+                required pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" #patientname="ngModel">
+              <div class="text-danger" *ngIf="patientname.invalid && patientname.touched">
+                Only letters (A-Z or a-z) allowed, at least one character.
+              </div>
+            </div>
+          
+            <!-- Age -->
+            <div class="mb-3">
+              <label class="form-label">Age</label>
+              <input type="number" class="form-control" name="age" [(ngModel)]="r.age"
+                required min="1" #age="ngModel">
+              <div class="text-danger" *ngIf="age.invalid && age.touched">
+                Age must be greater than 0.
+              </div>
+            </div>
+          
+            <!-- Date -->
+            <div class="mb-3">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" name="date" [(ngModel)]="r.date"
+                required [min]="date" #date="ngModel">
+              <div class="text-danger" *ngIf="date.invalid && date.touched">
+                Please select today or a future date.
+              </div>
+            </div>
+          
+            <!-- Village/City -->
+            <div class="mb-3">
+              <label class="form-label">Village/City</label>
+              <input type="text" class="form-control" name="villagecity" [(ngModel)]="r.villagecity"
+                required pattern="^[a-zA-Z]+(?: [a-zA-Z]+)*$" #villagecity="ngModel">
+              <div class="text-danger" *ngIf="villagecity.invalid && villagecity.touched">
+                Only letters (A-Z or a-z) allowed, at least one character.
+              </div>
+            </div>
+          
+            <!-- Mobile Number -->
+            <div class="mb-3">
+              <label class="form-label">Mobile Number</label>
+              <input type="tel" class="form-control" name="mobileno" [(ngModel)]="r.mobileno"
+                required pattern="^[6-9][0-9]{9}$" #mobileno="ngModel">
+              <div class="text-danger" *ngIf="mobileno.invalid && mobileno.touched">
+                Must be 10 digits and start with 6-9.
+              </div>
+            </div>
+          
+            <button type="submit" class="btn btn-primary w-100" name="but" [disabled]="form.invalid">Register</button>
+          </form>
+          
+           
+
+        <!-- Login Option Below Registration -->
+        <div class="text-center mt-3">
+            <div>Already registered? <div href="#loginForm" data-bs-toggle="collapse">Login Here</div></div>
+        </div>
+
+        <!-- Login Form -->
+        <div id="loginForm" class="collapse mt-3">
+            <h5 class="text-center">Patient Login</h5>
+            <form (ngSubmit)="submitdataa(loginForm)" #loginForm="ngForm">
+              <div class="mb-3">
+                <label class="form-label">Mobile Number</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="mobileno"
+                  [(ngModel)]="r.mobileno"
+                  required
+                  pattern="^[6-9][0-9]{9}$"
+                  #mobileno="ngModel"
+                />
+                <div *ngIf="mobileno.invalid && mobileno.touched" class="text-danger">
+                  Mobile number must be 10 digits and start with 6 to 9.
+                </div>
+              </div>
+            
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  [(ngModel)]="r.password"
+                  required
+                  pattern="^[A-Z][a-zA-Z0-9@#$%^&+=!]{6,}[0-9@#$%^&+=!]$"
+                  #password="ngModel"
+                />
+                <div *ngIf="password.invalid && password.touched" class="text-danger">
+                  Password must start with a capital letter, contain at least 8 characters, a digit, and a special character.
+                </div>
+              </div>
+            
+              <button type="submit" class="btn btn-success w-100" [disabled]="loginForm.invalid">
+                Login
+              </button>
+            </form>
+            
+            
+        </div>
+       
+       
+
+        <!-- Book Appointment Button (Appears after successful registration or login) -->
+        <div id="bookAppointmentSection" class="collapse mt-3">
+            <div class="alert alert-success text-center">
+                Registration/Login Successful!
+            </div>
+            <a routerLink="/bookappoinment" class="btn btn-success w-100">Go to Book Appointment</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h2 class="mb-3" style="font-weight:70%;font-size: 60px;text-align: center;color: rgb(80, 197, 21);font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Ambulance Records</h2>
+    <br><br>
+    <form id="ambulanceForm" class="mb-3" (ngSubmit)="submitdata()">
+        <div class="row">
+            <div class="col-md-3">
+                <input type="text" id="name" class="form-control" placeholder="Name" name="name" [(ngModel)]="a.name" required>
+            </div>
+            <div class="col-md-3">
+                <input type="text" id="location" class="form-control" placeholder="Location/Village" name="location" [(ngModel)]="a.location"required>
+            </div>
+            <div class="col-md-3">
+                <input type="tel" id="mobile" class="form-control" placeholder="Mobile No"name="mobileno"[(ngModel)]="a.mobileno" required>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">Add Record</button>
+            </div>
+        </div>
+    </form>
+    
+    
+</div>

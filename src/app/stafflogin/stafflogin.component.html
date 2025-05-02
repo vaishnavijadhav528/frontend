@@ -1,0 +1,133 @@
+<br><br><br><br>
+<div class="container-fluid position-relative p-0">
+    <!-- Fullscreen Background Image -->
+    <img src="image/shridatta.jpeg" class="w-100" style="height:100vh; object-fit:cover;">
+  
+    <!-- Form Positioned on Right Side -->
+    <div class="position-absolute top-50 end-0 translate-middle-y me-5">
+      <div class="card p-4 shadow-lg" style="width: 400px; background-color: #ffffffcc;">
+        <h4 class="text-center">Staff Registration</h4>
+  
+        <!-- Registration Form -->
+        <form #regsForm="ngForm" (ngSubmit)="submitdata(regsForm)">
+          <!-- Staff Name: only letters, at least one word -->
+          <div class="mb-3">
+            <label class="form-label">Staff Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="staffname"
+              [(ngModel)]="ss.staffname"
+              required
+              pattern="^[A-Za-z]+(?: [A-Za-z]+)*$"
+            />
+          </div>
+        
+          <!-- Date: must be today or future -->
+          <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input
+              type="date"
+              class="form-control"
+              name="date"
+              [(ngModel)]="ss.date"
+              
+             
+            />
+          </div>
+        
+          <!-- Email: all lowercase, ends with @gmail.com -->
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              [(ngModel)]="ss.email"
+              required
+              pattern="^[a-z0-9._%+-]+@gmail\.com$"
+            />
+          </div>
+        
+          <!-- Mobile Number: 10 digits, starts with 6-9 -->
+          <div class="mb-3">
+            <label class="form-label">Mobile Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              name="mobileno"
+              [(ngModel)]="ss.mobileno"
+              required
+              pattern="^[6-9][0-9]{9}$"
+            />
+          </div>
+        
+          <!-- Password: First letter capital, one digit, one special char, min 8 chars -->
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              [(ngModel)]="ss.password"
+              required
+              pattern="^(?=[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$"
+            />
+          </div>
+        
+          <button type="submit" class="btn btn-primary w-100" [disabled]="regsForm.invalid">Register</button>
+        </form>
+        
+  
+        <!-- Login Option Below Registration -->
+        <div class="text-center mt-3">
+          <div>
+            Already registered? 
+            <a href="#loginForm" data-bs-toggle="collapse" style="cursor: pointer;">Login Here</a>
+          </div>
+        </div>
+  
+        <!-- Login Form -->
+        <div id="loginForm" class="collapse mt-3">
+          <h5 class="text-center">Staff Login</h5>
+          <form #loginsForm="ngForm"(ngSubmit)="submitdataa(loginsForm)">
+            <div class="mb-3">
+              <label>Mobile Number</label>
+              <input 
+                type="tel" 
+                class="form-control" 
+                name="mobileno" 
+                [(ngModel)]="s1.mobileno" 
+                required
+                pattern="^[6-9][0-9]{9}$"
+                #mobileno="ngModel"
+              >
+              <div *ngIf="mobileno.invalid && mobileno.touched" class="text-danger">
+                Mobile number must be 10 digits and start with 6–9.
+              </div>
+            </div>
+          
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input 
+                type="password" 
+                class="form-control" 
+                name="password" 
+                [(ngModel)]="s1.password" 
+                required
+                pattern="^[A-Z][A-Za-z0-9@#$%^&+=!]*[0-9]+.*[@#$%^&+=!]+.*$"
+                #password="ngModel"
+              >
+              <div *ngIf="password.invalid && password.touched" class="text-danger">
+                Password must start with a capital letter, include at least one number and one special character.
+              </div>
+            </div>
+          
+            <button type="submit" class="btn btn-success w-100" name="bu" [disabled]="loginsForm.invalid">Login</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  

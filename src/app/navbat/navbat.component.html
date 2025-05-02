@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top"style="height: 100px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" >
+          <img src="img/pharmacy.png"  style="height: auto;width: 80px;">
+
+        </a>
+        <div class="container-fluid" [ngSwitch]="usertype">
+
+      <ul class="navbar-nav ms-auto"style="font-size:30px;"*ngSwitchCase="'user'">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/">Home</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/about">AboutUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/service">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/qualifieddoctor">OurTeam</a>
+        </li>
+        
+        <li class="nav-item">
+          <a aAMBULANCE class="nav-link active" routerLink="/emergencyhelp">Ambulance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/contact">contact</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/medical">Medical</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/login">AdminLogin</a> 
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link btn btn-danger text-white px-3 border border-dark" (click)="alogout()">Logout</a>
+          </li>
+    </ul>
+
+  
+    <ul class="navbar-nav ms-auto"style="font-size:30px;" *ngSwitchCase="'admin'">
+
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/adminindex" >Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/Stafflogin">StaffLogin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/doctorlogin">DoctorLogin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/Patientrecord">PatitentRecord</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link active"routerLink="/ambulancerecord">AmbulanceRecord</a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link active"routerLink="/viewpatient">ViewAppoinments</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn btn-danger text-white px-3 border border-dark" (click)="alogout()">Logout</a>
+    </li>
+
+    </ul>
+  
+  </div>
+      </div>
+</nav>
+
+
+    
+ 
+ 
+
+
+
+
+

@@ -1,0 +1,123 @@
+<br><br><br><br>
+<div class="container mt-5">
+  <h2 class="text-center">Patient Appoinments Record</h2>
+
+  <!-- Patient Form -->
+  <div class="card p-4 mb-4 shadow">
+    <h4 class="mb-3">Add New Patient</h4>
+    <form #patientForm="ngForm" (ngSubmit)="submitdata()" novalidate>
+      <div class="row">
+        <!-- Name Validation -->
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [(ngModel)]="p.name"
+            required
+            pattern="^[A-Za-z\s]+$"
+            #name="ngModel"
+          />
+          <div *ngIf="name.invalid && name.touched" class="text-danger">
+            Name must contain only letters and spaces.
+          </div>
+        </div>
+    
+        <!-- Age Validation -->
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Age:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="age"
+            [(ngModel)]="p.age"
+            required
+            min="1"
+            #age="ngModel"
+          />
+          <div *ngIf="age.invalid && age.touched" class="text-danger">
+            Age must be greater than 0.
+          </div>
+        </div>
+    
+        <!-- Mobile Number Validation -->
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Mobile No:</label>
+          <input
+            type="tel"
+            class="form-control"
+            name="mobileno"
+            [(ngModel)]="p.mobileno"
+            required
+            pattern="^[6-9][0-9]{9}$"
+            #mobileno="ngModel"
+          />
+          <div *ngIf="mobileno.invalid && mobileno.touched" class="text-danger">
+            Mobile number must be 10 digits and start with 6 to 9.
+          </div>
+        </div>
+    
+        <!-- Village Validation -->
+        <div class="col-md-3 mb-3">
+          <label class="form-label">Village:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="village"
+            [(ngModel)]="p.village"
+            required
+            pattern="^[A-Za-z\s]+$"
+            #village="ngModel"
+          />
+          <div *ngIf="village.invalid && village.touched" class="text-danger">
+            Village must contain only letters.
+          </div>
+        </div>
+    
+        <!-- Submit Button -->
+        <div class="col-md-2 d-flex align-items-end">
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            [disabled]="patientForm.invalid"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+
+  <!-- Clear All Button -->
+  <div class="text-end mb-3">
+    <button class="btn btn-danger" (click)="clearAllPatients()">Clear All</button>
+  </div>
+
+  <!-- Patient Table -->
+  <table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>Sr. No</th>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Mobile No</th>
+        <th>Village</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of pat; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.age }}</td>
+        <td>{{ p.mobileno }}</td>
+        <td>{{ p.village }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="del(p.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
