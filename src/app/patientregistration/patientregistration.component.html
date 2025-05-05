@@ -56,6 +56,18 @@
                 Must be 10 digits and start with 6-9.
               </div>
             </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="r.password"
+                required
+                pattern="^[A-Z][a-zA-Z0-9@#$%^&+=!]{6,}[0-9@#$%^&+=!]$"
+                #password="ngModel"
+              />
+            </div>
           
             <button type="submit" class="btn btn-primary w-100" name="but" [disabled]="form.invalid">Register</button>
           </form>
